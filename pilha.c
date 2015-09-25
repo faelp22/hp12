@@ -77,17 +77,15 @@ void imprime_topo(Pilha *p) {
 
 void hp12(Pilha *p) {
     int i = 0;
-    int validador = 0; // usado para verificar se antes do sinal de operacao veio um numero, caso contrario a expreção esta errada
     while (p->esprecao[i] != 0) {
        
         if (p->esprecao[i] != '+' && p->esprecao[i] != '-' && p->esprecao[i] != '*' && p->esprecao[i] != '/' && p->esprecao[i] != '(' && p->esprecao[i] != ')') {
-            validador = 1;
             insere_valor(p, p->esprecao[i]);
             if(p->esprecao[i+1] == 0 || i+1 == TAMANHO)
             {
                 while(p->t1 > -1)
                 {
-                    insere_valor(p, p->sinal[p->t1]); //OBS analisar se o mesmo está retornado valor
+                    insere_valor(p, p->sinal[p->t1]);
                     retira_sinal(p);
                 }
             }
@@ -104,15 +102,16 @@ void hp12(Pilha *p) {
                 {
                     while(p->t1 > -1)
                     {
-                        insere_valor(p, p->sinal[p->t1]); //OBS analisar se o mesmo está retornado valor
+                        insere_valor(p, p->sinal[p->t1]);
                         retira_sinal(p);
                     }
                 }
             }
         }
         i++;
-    }// end for
+    }
     printf("%s \n", p->valor);
+    return;
 }
 
 

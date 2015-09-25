@@ -8,11 +8,6 @@
 #include "pilha.h"
 #include <stdio.h>
 
-using namespace std;
-
-/*
- * 
- */
 int main(int argc, char** argv) {
 
     printf("Conversor de Notação Polonesa Inversa v-1.0\n");
