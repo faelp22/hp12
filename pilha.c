@@ -7,13 +7,14 @@
 
 #include "pilha.h"
 #include <stdio.h>
+#include <string.h>
 
 void inicializa(Pilha *p) {
 
     for (int i = 0; i < TAMANHO - 1; i++) {
         p->valor[i] = 0;
         p->sinal[i] = 0;
-        p->esprecao[i] = 0;
+        p->expressao[i] = 0;
     }// esterilizando variáveis
 
     p->t1 = -1;
@@ -76,12 +77,20 @@ void imprime_topo(Pilha *p) {
 }
 
 void hp12(Pilha *p) {
+    
+    if(strlen(p->expressao) >= TAMANHO)
+    {
+        printf("Sua expressao ultrapassou o limite de %d caracteres \n", TAMANHO);
+        printf("voce digitou %d caracteres tente novamente com uma expressao menor\n", strlen(p->expressao));
+        return;
+    }
+    
     int i = 0;
-    while (p->esprecao[i] != 0) {
+    while (p->expressao[i] != 0) {
        
-        if (p->esprecao[i] != '+' && p->esprecao[i] != '-' && p->esprecao[i] != '*' && p->esprecao[i] != '/' && p->esprecao[i] != '(' && p->esprecao[i] != ')') {
-            insere_valor(p, p->esprecao[i]);
-            if(p->esprecao[i+1] == 0 || i+1 == TAMANHO)
+        if (p->expressao[i] != '+' && p->expressao[i] != '-' && p->expressao[i] != '*' && p->expressao[i] != '/' && p->expressao[i] != '(' && p->expressao[i] != ')') {
+            insere_valor(p, p->expressao[i]);
+            if(p->expressao[i+1] == 0 || i+1 == TAMANHO)
             {
                 while(p->t1 > -1)
                 {
@@ -92,13 +101,13 @@ void hp12(Pilha *p) {
         }
         else
         {
-            if (p->esprecao[i] != '(' && p->esprecao[i] != ')')
+            if (p->expressao[i] != '(' && p->expressao[i] != ')')
             {
-                insere_sinal(p, p->esprecao[i]);
+                insere_sinal(p, p->expressao[i]);
             }
             else
             {
-                if(p->esprecao[i] != '(')
+                if(p->expressao[i] != '(')
                 {
                     while(p->t1 > -1)
                     {

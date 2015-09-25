@@ -13,7 +13,7 @@
 struct pilha {
 	char sinal[TAMANHO];
 	char valor[TAMANHO];
-	char esprecao[TAMANHO];
+	char expressao[TAMANHO];
 	int t1; // topo para sinal
 	int t2; // topo para valor
 };
