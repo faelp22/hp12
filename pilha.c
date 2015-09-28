@@ -81,14 +81,21 @@ void hp12(Pilha *p) {
     if(strlen(p->expressao) >= TAMANHO)
     {
         printf("Sua expressao ultrapassou o limite de %d caracteres \n", TAMANHO);
-        printf("voce digitou %d caracteres tente novamente com uma expressao menor\n", strlen(p->expressao));
+        printf("voce digitou %d caracteres tente novamente com uma expressao menor\n", int(strlen(p->expressao)));
         return;
     }
     
     int i = 0;
     while (p->expressao[i] != 0) {
        
-        if (p->expressao[i] != '+' && p->expressao[i] != '-' && p->expressao[i] != '*' && p->expressao[i] != '/' && p->expressao[i] != '(' && p->expressao[i] != ')') {
+        if (p->expressao[i] != '+' && 
+            p->expressao[i] != '-' && 
+            p->expressao[i] != '*' && 
+            p->expressao[i] != '/' && 
+            p->expressao[i] != '(' && 
+            p->expressao[i] != ')') 
+        {
+
             insere_valor(p, p->expressao[i]);
             if(p->expressao[i+1] == 0 || i+1 == TAMANHO)
             {
