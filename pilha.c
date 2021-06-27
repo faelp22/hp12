@@ -1,13 +1,13 @@
 /* 
  * File:   pilha.c
- * Author: Isael Sousa <faelp22@hotmail.com>
+ * Author: Isael Sousa <faelp22@gmail.com>
  *
  * Created on 24 de Setembro de 2015, 22:43
  */
 
-#include "pilha.h"
 #include <stdio.h>
 #include <string.h>
+#include "pilha.h"
 
 void inicializa(Pilha *p) {
 
@@ -77,17 +77,17 @@ void imprime_topo(Pilha *p) {
 }
 
 void hp12(Pilha *p) {
-    
+
     if(strlen(p->expressao) >= TAMANHO)
     {
         printf("Sua expressao ultrapassou o limite de %d caracteres \n", TAMANHO);
-        printf("voce digitou %d caracteres tente novamente com uma expressao menor\n", int(strlen(p->expressao)));
+        printf("voce digitou %d caracteres tente novamente com uma expressao menor\n", (int)strlen(p->expressao));
         return;
     }
-    
+
     int i = 0;
     while (p->expressao[i] != 0) {
-       
+
         if (p->expressao[i] != '+' && 
             p->expressao[i] != '-' && 
             p->expressao[i] != '*' && 
@@ -129,5 +129,3 @@ void hp12(Pilha *p) {
     printf("%s \n", p->valor);
     return;
 }
-
-

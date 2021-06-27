@@ -1,6 +1,7 @@
 nbproject/
 build/
-dist/
-Makefile
 .dep.inc
 .directory
+.vscode
+hp12
+*.o

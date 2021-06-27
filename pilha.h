@@ -1,6 +1,6 @@
 /* 
  * File:   pilha.h
- * Author: Isael Sousa <faelp22@hotmail.com>
+ * Author: Isael Sousa <faelp22@gmail.com>
  *
  * Created on 24 de Setembro de 2015, 22:43
  */
@@ -36,5 +36,4 @@ void imprime_topo(Pilha *p);
 
 void hp12(Pilha *p);
 
-
-#endif	/* PILHA_H */
+#endif

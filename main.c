@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Isael Sousa <faelp22@hotmail.com>
+ * Author: Isael Sousa <faelp22@gmail.com>
  *
  * Created on 24 de Setembro de 2015, 22:41
  */
